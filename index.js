@@ -1,5 +1,4 @@
 const express = require('express');
-const dotenv = require('dotenv');
 require('./config/mogoose')
 const session = require('express-session');
 const passport = require('passport');
@@ -29,7 +28,7 @@ app.set('layout extractScripts', true);
 
 app.use(express.urlencoded({ extended: true }));
 
-const port = process.env.PORT || 8000;
+const port = 8000;
 
 // passport authentication
 app.use(passport.initialize());
