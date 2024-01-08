@@ -4,7 +4,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport');
 
-// dotenv.config({ path: 'config/.env' });
+dotenv.config({ path: 'config/.env' });
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.set('layout extractScripts', true);
 
 app.use(express.urlencoded({ extended: true }));
 
-const port = 2000;
+const port = process.env.PORT || 8000;
 
 // passport authentication
 app.use(passport.initialize());
